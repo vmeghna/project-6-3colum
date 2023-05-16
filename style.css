@@ -12,7 +12,7 @@
   margin: 0;
   border: 0;
   outline: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 body {
   font-family: "Lexend Deca", sans-serif;
@@ -21,14 +21,105 @@ body {
   display: flex;
   place-content: center;
   height: 100vh;
+  box-sizing: border-box;
 }
 html {
   font-size: 15px;
+}
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.small {
+  margin-bottom: 30px;
 }
 .container {
   width: 840px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+}
+.box-one {
+  background-color: var(--clr-Bright-orange);
+  flex-direction: column;
+  display: flex;
+  padding: 40px 32px;
+  align-items: flex-start;
+  border-radius: 10px 0 0 10px;
+}
+.box-two {
+  background-color: var(--clr-Dark-cyan);
+  flex-direction: column;
+  display: flex;
+  padding: 40px 32px;
+  align-items: flex-start;
+}
+.box-three {
+  background-color: var(--clr-Very-dark-cyan);
+  border-radius: 0 10px 10px 0;
+  flex-direction: column;
+  display: flex;
+  padding: 40px 32px;
+  align-items: flex-start;
+}
+h1 {
+  font-family: "Big Shoulders Display";
+  font-size: 700;
+  text-transform: uppercase;
+  color: var(--clr-Very-light-gray);
+}
+p {
+  font-size: 15px;
+  margin: 25px 0 60px 0;
+  color: var(--clr-transparent-white);
+  font-weight: 400;
+  line-height: 1.8;
+}
+button {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 16;
+  border: 2px solid var(--clr-Very-light-gray);
+  background-color: var(--clr-Very-light-gray);
+  transition: all ease 0.3s;
+}
+.box-one button {
+  color: hsl(31, 77%, 52%);
+}
+.box-two button {
+  color: hsl(184, 100%, 22%);
+}
+.box-three button {
+  color: hsl(179, 100%, 13%);
+}
+button :hover {
+  background: transparent;
+  color: var(--clr-Very-light-gray);
+}
+/*mobile-view*/
+@media screen and (max-width: 600px) {
+  p {
+    margin-bottom: 20px;
+  }
+  body {
+    height: auto;
+  }
+  .container {
+    flex-direction: column;
+    margin: 16% 0;
+    padding: 8%;
+  }
+  .box-one,
+  .box-two,
+  .box-three {
+    padding: 38px 44px;
+  }
+  .box-one {
+    border-radius: 10px 10px 0 0;
+  }
+  .box-two {
+    border-radius: 0 0 10px 10px;
+  }
 }
